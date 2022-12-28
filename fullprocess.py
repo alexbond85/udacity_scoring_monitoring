@@ -77,7 +77,7 @@ def is_model_drift():
 # run diagnostics.py and reporting.py for the re-deployed model
 
 
-if is_new_data_ingested(): # and is_model_drift():
+if is_new_data_ingested() and is_model_drift():
     training.train_model()
     scoring.score_model()
     deployment.store_model_into_pickle()
