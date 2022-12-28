@@ -31,8 +31,8 @@ def merge_multiple_dataframe():
         .reset_index(drop=True)
     )
     df.to_csv(csv_merged_filepath, index=False)
-    with open(list_ingested_filepath, 'a', encoding='utf-8', newline='') as f:
-        f.writelines("\n".join(csv_files))
+    with open(list_ingested_filepath, 'w', encoding='utf-8', newline='') as f:
+        f.writelines("\n".join([os.path.basename(x) for x in csv_files]))
         f.write("\n")
     # check for datasets, compile them together, and write to an output file
 
