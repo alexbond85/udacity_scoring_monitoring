@@ -20,5 +20,5 @@ def store_model_into_pickle():
     for f, t in zip(from_, to):
         shutil.copy(f, t)
 
-
-store_model_into_pickle()
+if __name__ == '__main__':
+    store_model_into_pickle()
